@@ -1,7 +1,9 @@
-import { unstable_getServerSession } from "next-auth/next";
+import { getServerSession } from "next-auth/next";
+import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 
 export default async function AuthStatus() {
-  const session = await unstable_getServerSession();
+  const session = await getServerSession(authOptions);
+  console.log(`sesh: ${session}`);
   return (
     <div className="absolute top-5 w-full flex justify-center items-center">
       {session && (

@@ -18,6 +18,7 @@ export default function Form({ type }: { type: "login" | "register" }) {
         setLoading(true);
         if (type === "login") {
           signIn("credentials", {
+            // callbackUrl:"/dashboard",
             redirect: false,
             email: e.currentTarget.email.value,
             password: e.currentTarget.password.value,
@@ -28,7 +29,7 @@ export default function Form({ type }: { type: "login" | "register" }) {
               toast.error(error);
             } else {
               router.refresh();
-              router.push("/protected");
+              router.push("/dashboard");
             }
           });
         } else {
