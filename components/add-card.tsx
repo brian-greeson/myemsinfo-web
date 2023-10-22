@@ -29,17 +29,18 @@ export default function AddCard({ userId }: { userId: number | undefined }) {
   }, [formType, userId]);
 
   return (
-    <div className="m-2 w-full sm:max-w-lg rounded-xl shadow-md bg-gray-50">
-      <label>
-        Type:
-        <select onChange={setFormFields} name="formType" id="formType">
-          <option value={'insurance'}>Insurance Information</option>
-          <option value={'contact'}>Emergency Contact</option>
-          <option value={'instruction'}>General Instructions</option>
-          <option value={'medical'}>Medical Information</option>
-        </select>
-      </label>
-      <div className="  ">{renderForm}</div>
+    <div className="m-2 sm:max-w-lg rounded-xl shadow-md bg-gray-50">
+      <div className=" p-1">
+        <label>
+          <select onChange={setFormFields} name="formType" id="formType" placeholder="Info Type">
+            <option value={'insurance'}>Insurance Information</option>
+            <option value={'contact'}>Emergency Contact</option>
+            <option value={'instruction'}>General Instructions</option>
+            <option value={'medical'}>Medical Information</option>
+          </select>
+          {renderForm}
+        </label>
+      </div>
     </div>
   );
 }

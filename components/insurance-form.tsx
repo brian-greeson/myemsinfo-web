@@ -19,7 +19,7 @@ export default function InsuranceForm({ userId }: { userId: number | undefined }
     <form action={create} className="flex flex-col">
       <input type="hidden" id="userId" name="userId" defaultValue={userId} />
 
-      <label className="">
+      <label className="w-full">
         <input className="m-1 rounded-xl shadow-md w-full" id="name" name="name" type="text" required={true} placeholder="Name:" />
       </label>
       <label className="">
@@ -34,7 +34,7 @@ export default function InsuranceForm({ userId }: { userId: number | undefined }
       <label className="">
         <textarea className="m-1 rounded-xl shadow-md textarea textarea-bordered textarea-lg w-full" id="description" name="description" placeholder="Additional info / Notes" />
       </label>
-      <div>
+      <div className="">
         <SubmitButton text="Add Info" />
       </div>
     </form>

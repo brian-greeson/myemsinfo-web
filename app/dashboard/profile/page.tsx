@@ -27,7 +27,7 @@ export default async function Profile() {
 
   return (
     <div className="">
-      <div className="">Add Cards of emergency information. What goes in a card is up to you. Some typical cards include an emergency contact card, Insurance information card, Specific instructions or preferred hospital.</div>
+      <div className="p-2 w-full sm:max-w-lg shadow-md bg-gray-50 md:text-md text-sm">Add Cards of emergency information to share below.</div>
       <div className="flex flex-row flex-wrap ">{user?.emsInfo.map((card) => <InfoCard key={card.id} card={card} />)}</div>
 
       <AddCard userId={user?.id} />
