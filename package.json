@@ -13,6 +13,8 @@
     "@types/node": "^18.11.9",
     "@types/react": "^18.0.25",
     "bcrypt": "^5.1.0",
+    "date-fns": "^2.30.0",
+    "material-symbols": "^0.13.0",
     "next": "^13.4.2",
     "next-auth": "^4.22.1",
     "react": "^18.2.0",
@@ -23,11 +25,13 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
     "@types/bcrypt": "^5.0.0",
+    "@types/react-dom": "^18.2.14",
     "autoprefixer": "^10.4.4",
     "daisyui": "^3.9.2",
     "eslint": "8.11.0",
     "eslint-config-next": "^13.0.5",
     "postcss": "^8",
+    "prettier": "^3.0.3",
     "prisma": "^4.14.0",
     "typescript": "^5"
   }

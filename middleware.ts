@@ -20,7 +20,7 @@ export default async function middleware(req: NextRequest) {
     return NextResponse.redirect(new URL('/login', req.url));
   } else if (session && (path === '/login' || path === '/register')) {
     // Redirect users to dashboard if they attempt to login without signing out
-    return NextResponse.redirect(new URL('/dashboard', req.url));
+    return NextResponse.redirect(new URL('/dashboard/profile', req.url));
   }
   return NextResponse.next();
 }

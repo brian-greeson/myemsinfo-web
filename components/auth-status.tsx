@@ -1,14 +1,20 @@
-import { getServerSession } from "next-auth/next";
+import { getServerSession } from 'next-auth/next';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
+import SignOut from './sign-out';
+import { log } from 'console';
 
 export default async function AuthStatus() {
   const session = await getServerSession(authOptions);
-  console.log(`sesh: ${session}`);
+  log(session);
   return (
-    <div className="absolute top-5 w-full flex justify-center items-center">
+    <div className="absolute top-1 w-full flex justify-center items-center">
       {session && (
-        <p className="text-stone-200 text-sm">
-          Signed in as {session.user?.email}
+        <p className="text-stone-400 text-sm">
+          Welcome {session.user?.email}{' '}
+          <span className="btn btn-xs btn-warning">
+            {' '}
+            <SignOut />
+          </span>
         </p>
       )}
     </div>
