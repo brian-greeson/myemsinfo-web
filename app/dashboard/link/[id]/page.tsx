@@ -8,7 +8,7 @@ export default async function LinkView({ params }: { params: { id: string } }) {
     <div>
       <h2>{shareLink?.name}</h2>
       {shareLink?.users.map((user) => (
-        <div>
+        <div key={user.id}>
           <h3>{user.email}:</h3>
           <div className="flex flex-row flex-wrap ">{user?.emsInfo.map((card) => <InfoCard key={card.id} card={card} />)}</div>
         </div>
