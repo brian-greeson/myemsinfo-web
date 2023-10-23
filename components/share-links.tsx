@@ -19,7 +19,7 @@ export default async function ShareLinks({ user }) {
               </thead>
               <tbody>
                 {user?.shareLinks.map((link) => (
-                  <tr>
+                  <tr key={link.id}>
                     <td>{link.deleted ? <button className="btn w-full btn-sm btn-warning">Deactivated</button> : <button className="btn btn-sm btn-success">Active</button>}</td>
                     <td>{link.user.displayName}</td>
                     <td>

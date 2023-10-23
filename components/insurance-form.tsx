@@ -20,19 +20,19 @@ export default function InsuranceForm({ userId }: { userId: number | undefined }
       <input type="hidden" id="userId" name="userId" defaultValue={userId} />
 
       <label className="w-full">
-        <input className="m-1 rounded-xl shadow-md w-full" id="name" name="name" type="text" required={true} placeholder="Name:" />
+        <input className="m-1 rounded-md shadow-md w-full" id="name" name="name" type="text" required={true} placeholder="Name:" />
       </label>
       <label className="">
-        <input className="m-1 rounded-xl shadow-md w-full" id="policy-number" name="policy-number" type="text" placeholder="Policy #" />
+        <input className="m-1 rounded-md shadow-md w-full" id="policy-number" name="policy-number" type="text" placeholder="Policy #" />
       </label>
       <label className="">
-        <input className="m-1 rounded-xl shadow-md  w-full" id="group-number" name="group-number" type="text" placeholder="Group #" />
+        <input className="m-1 rounded-md shadow-md  w-full" id="group-number" name="group-number" type="text" placeholder="Group #" />
       </label>
       <label className="">
-        <input className="m-1 rounded-xl shadow-md w-full" id="phone-number" name="phone-number" type="tel" placeholder="Phone #" />
+        <input className="m-1 rounded-md shadow-md w-full" id="phone-number" name="phone-number" type="tel" placeholder="Phone #" />
       </label>
       <label className="">
-        <textarea className="m-1 rounded-xl shadow-md textarea textarea-bordered textarea-lg w-full" id="description" name="description" placeholder="Additional info / Notes" />
+        <textarea className="m-1 rounded-md shadow-md textarea textarea-bordered textarea-lg w-full" id="description" name="description" placeholder="Additional info / Notes" />
       </label>
       <div className="">
         <SubmitButton text="Add Info" />
