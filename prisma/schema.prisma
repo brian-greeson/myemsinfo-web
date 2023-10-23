@@ -3,53 +3,41 @@ generator client {
 }
 
 datasource db {
-  provider  = "postgresql"
-  url       = env("POSTGRES_URL")
-  directUrl = env("POSTGRES_URL_NON_POOLING")
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
 }
 
 model User {
-  id          Int                 @id @default(autoincrement())
-  createdAt   DateTime            @default(now())
-  updateAt    DateTime            @updatedAt
-  email       String              @unique
-  password    String
-  deleted     Boolean             @default(false)
-  emsInfo     EmsInfo[]
-  shareLinks  ShareLinksOnUsers[]
-  displayName String              @default("")
+  id           String      @id @default(auto()) @map("_id") @db.ObjectId
+  createdAt    DateTime    @default(now())
+  updateAt     DateTime    @updatedAt
+  email        String      @unique
+  password     String
+  deleted      Boolean     @default(false)
+  emsInfo      EmsInfo[]
+  shareLinkIDs String[]    @db.ObjectId
+  shareLinks   ShareLink[] @relation(fields: [shareLinkIDs], references: [id])
+  displayName  String      @default("")
 }
 
 model ShareLink {
-  id        Int                 @id @default(autoincrement())
-  name      String              @default("My Share Link")
-  createdAt DateTime            @default(now())
-  updateAt  DateTime            @updatedAt
-  deleted   Boolean             @default(false)
-  active    Boolean             @default(false)
-  users     ShareLinksOnUsers[]
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String   @default("My Share Link")
+  createdAt DateTime @default(now())
+  updateAt  DateTime @updatedAt
+  deleted   Boolean  @default(false)
+  active    Boolean  @default(false)
+  userIDs   String[] @db.ObjectId
+  users     User[]   @relation(fields: [userIDs], references: [id])
   url       String
 }
 
-model ShareLinksOnUsers {
-  createdAt   DateTime  @default(now())
-  updateAt    DateTime  @updatedAt
-  shareLinkId Int
-  userId      Int
-  isOwner     Boolean   @default(false)
-  deleted     Boolean   @default(false)
-  shareLink   ShareLink @relation(fields: [shareLinkId], references: [id])
-  user        User      @relation(fields: [userId], references: [id])
-
-  @@id([shareLinkId, userId])
-}
-
 model EmsInfo {
-  id           Int       @id @default(autoincrement())
+  id           String    @id @default(auto()) @map("_id") @db.ObjectId
   createdAt    DateTime  @default(now())
   updateAt     DateTime  @updatedAt
-  userId       Int
   deleted      Boolean   @default(false)
+  userId       String    @db.ObjectId
   user         User      @relation(fields: [userId], references: [id])
   phoneNumber  String?
   groupNumber  String?

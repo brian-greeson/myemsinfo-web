@@ -20,13 +20,13 @@ export default function ContactForm({ userId }: { userId: number | undefined }) 
       <input type="hidden" id="userId" name="userId" defaultValue={userId} />
 
       <label className="">
-        <input className="m-1 rounded-xl shadow-md w-full" id="name" name="name" type="text" required={true} placeholder="Name:" />
+        <input className="m-1 rounded-md shadow-md w-full" id="name" name="name" type="text" required={true} placeholder="Name:" />
       </label>
       <label className="">
-        <input className="m-1 rounded-xl shadow-md w-full" id="relationship" name="relationship" type="text" placeholder="Relationship:" />
+        <input className="m-1 rounded-md shadow-md w-full" id="relationship" name="relationship" type="text" placeholder="Relationship:" />
       </label>
       <label className="">
-        <input className="m-1 rounded-xl shadow-md w-full" id="phone-number" name="phone-number" type="tel" placeholder="Phone #" />
+        <input className="m-1 rounded-md shadow-md w-full" id="phone-number" name="phone-number" type="tel" placeholder="Phone #" />
       </label>
       <div>
         <SubmitButton text="Add Info" />

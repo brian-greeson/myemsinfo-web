@@ -20,10 +20,10 @@ export default function InstructionForm({ userId }: { userId: number | undefined
       <input type="hidden" id="userId" name="userId" defaultValue={userId} />
 
       <label className="">
-        <input className="m-1 rounded-xl shadow-md w-full" id="name" name="name" type="text" required={true} placeholder="Instructions Title" />
+        <input className="m-1 rounded-md shadow-md w-full" id="name" name="name" type="text" required={true} placeholder="Instructions Title" />
       </label>
       <label className="">
-        <textarea className="m-1 rounded-xl shadow-md w-full" id="description" name="description" placeholder="Enter your instructions here" />
+        <textarea className="m-1 rounded-md shadow-md w-full" id="description" name="description" placeholder="Enter your instructions here" />
       </label>
       <div>
         <SubmitButton text="Add Info" />
