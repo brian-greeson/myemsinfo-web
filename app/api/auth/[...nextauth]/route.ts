@@ -31,10 +31,7 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
 };
-// Use it in server contexts
-// export function auth(...args: [GetServerSidePropsContext['req'], GetServerSidePropsContext['res']] | [NextApiRequest, NextApiResponse] | []) {
-//   return getServerSession(...args, authOptions);
-// }
+
 const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };

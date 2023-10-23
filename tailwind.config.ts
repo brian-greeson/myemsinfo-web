@@ -10,7 +10,9 @@ const config: Config = {
       },
     },
   },
-
+  daisyui: {
+    themes: ['light', 'dark', 'cupcake'],
+  },
   plugins: [require('@tailwindcss/typography'), require('daisyui')],
 };
 export default config;

@@ -5,7 +5,6 @@ import { log } from 'console';
 
 export default async function AuthStatus() {
   const session = await getServerSession(authOptions);
-  log(session);
   return (
     <div className="absolute top-1 w-full flex justify-center items-center">
       {session && (
