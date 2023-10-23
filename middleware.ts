@@ -15,8 +15,9 @@ export default async function middleware(req: NextRequest) {
     secret: process.env.NEXTAUTH_SECRET,
   });
 
+  const unprotected = ['/', '/login', '/register'];
   // Redirect users to the login if they are not logged in
-  if (!session && path === '/dashboard') {
+  if (!session && path.includes('dashboard')) {
     return NextResponse.redirect(new URL('/login', req.url));
   } else if (session && (path === '/login' || path === '/register')) {
     // Redirect users to dashboard if they attempt to login without signing out

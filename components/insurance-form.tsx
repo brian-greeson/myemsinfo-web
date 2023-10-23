@@ -3,7 +3,7 @@
 import { createCard } from '@/app/lib/cards';
 import { useRouter } from 'next/navigation';
 import { SubmitButton } from './submit-button';
-export default function InsuranceForm({ userId }: { userId: number | undefined }) {
+export default function InsuranceForm({ userId }: { userId: string }) {
   const router = useRouter();
 
   const create = (formData: FormData) => {

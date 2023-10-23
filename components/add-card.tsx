@@ -6,7 +6,7 @@ import ContactForm from './contact-form';
 import InstructionForm from './instruction-form';
 import MedicalForm from './medical-form';
 
-export default function AddCard({ userId }: { userId: number | undefined }) {
+export default function AddCard({ userId }: { userId: string }) {
   const [formType, setFormType] = useState('insurance');
 
   const setFormFields = (event: React.ChangeEvent<HTMLSelectElement>) => {
